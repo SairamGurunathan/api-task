@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 
-.App-logo {
-  height: 40vmin;
+body{
+    background-color: #EEF1FF;
+    font-family: 'Poppins', sans-serif;
+    padding: 0 !important;
+}
+.nav-pills .nav-link.active{
+    background-color: #8e75e5 !important;
+}
+.dropdown-menu {
+  position: absolute !important;
+}
+.dropdown-menu[data-bs-popper]{
+   left: auto !important;
+   right: 0 !important;
+}
+tr th{
+    font-size: 15px;
+    font-weight: 500;
+    text-align: start;
+    padding: 10px 5px !important;
+    background-color: #EEF1FF !important;
+}
+tr td{
+    padding-left: 5px !important;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.bread {
+    --bs-breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E");
+}
+.search-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+input[name="box"] {
+  padding: 4px 8px;
+  width: 100%;
+  border: 1px solid #8e75e5;
+  border-radius: 7px;
+}
+.search-icon {
+  position: absolute;
+  right: 10px;
   pointer-events: none;
 }
+.gradient-custom {
+  background: #882c88;
+  background: -webkit-linear-gradient(to right bottom, #2193b0 , #6dd5ed);
+  background: linear-gradient(to right bottom, #8e75e5 , #2a95ad);
+  border-radius: 20px !important;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#user-modal{
+  --bs-modal-bg : transparent !important;
+  --bs-modal-border-color: rgba(0, 0, 0, 0.0) !important;
+  --bs-border-radius: 1.375rem !important; 
+}
+#user-modal .modal-header {
+  border: 0!important;
+}
+.modal-header .btn-close{
+  color: #fff;
+}
+
+#user-modal .btn-close{
+  --bs-btn-close-bg: url("./Assects/Img/x.svg") !important;
+}
+body.modal-open > :not(.modal) {
+  filter: blur(3px);
+}
+body.modal-open.swal2-shown > :not(.modal){
+  filter:none;
+}
+.swal2-container.swal2-shown {
+  background-color: rgba(0,0,0,.7) !important;
+}
+body.modal-open.off-canvas-start > :not(.modal){
+  filter:none !important;
+}
+.offcanvas-backdrop.show {
+  opacity: .5 !important;
+}
+.off-canvas.offcanvas.offcanvas-start.show {
+  filter: none;
+}
+@media only screen and (max-width: 700px){
+  .form{
+    width: 100% !important;
+    padding: 0px 15px !important;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (min-width: 701px){
+  .form{
+    width: 25rem !important;
   }
 }
