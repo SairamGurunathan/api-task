@@ -44,7 +44,7 @@ const TableBase = ({collectedData,handleDelete,handleDisplay,handleEdit,itemPerP
     </tr>
   ) : (
               collectedData.map((data,index)=>(
-                  <tr>
+                  <tr key={index}>
                   <td className="text-center">{index + 1 + pageNumber * itemPerPage}</td>
                   <td>{data.name}</td>
                   <td>{data.email}</td>

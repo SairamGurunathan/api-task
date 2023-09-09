@@ -3,10 +3,9 @@ import { Button } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form';
 import { Image } from '../Assects/Img/Img';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from './Interceptors';
 import { ToastContainer, toast } from 'react-toastify';
 import { ThreeDots } from 'react-loader-spinner';
-// import axios from 'axios';
+import api from './Interceptors';
 
 const LoginPage = ({setIsAuthenticated}) => {
   const navigate = useNavigate()
@@ -41,8 +40,9 @@ const LoginPage = ({setIsAuthenticated}) => {
     }
     
     setLoading(true);
+
     try{
-     const res = await axios.post("https://fts-backend.onrender.com/admin/login",{
+     const res = await api.post("/admin/login",{
         email:email,
         password:password,
       });
@@ -96,7 +96,7 @@ const LoginPage = ({setIsAuthenticated}) => {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {/* <span style={{ marginLeft: '10px' }}>Loading </span> */}
                 
-                <ThreeDots height='24' width='40' radius='4' color='white' ariaLabel='three-dots-loading' />
+                <ThreeDots height='24' width='40' radius='4' color='#000000' ariaLabel='three-dots-loading' />
                 
               </div>
             ) : (

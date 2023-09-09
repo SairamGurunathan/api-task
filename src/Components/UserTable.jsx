@@ -7,10 +7,10 @@ import { useState } from "react";
 import { Image } from "../Assects/Img/Img";
 import Model from "./Model";
 import TableBase from "./TableBase";
-import axios from "axios";
 import Swal from 'sweetalert2';
 import ReactPaginate from "react-paginate";
 import { ToastContainer, toast } from "react-toastify";
+import api from "./Interceptors";
 
 
 const UserTable = () => {
@@ -31,7 +31,6 @@ const UserTable = () => {
   const [errors, setErrors] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const [searchValue, setSearchValue] = useState("")
-  // const [suggestion, setSuggestion] = useState([])
   const itemPerPage = 5;
 
   const startingIndex = (pageNumber * itemPerPage) + 1;
@@ -117,7 +116,7 @@ const UserTable = () => {
       confirmButtonText: 'Yes'
     }).then((result) => {
       if (result.value) {
-          axios.delete(`https://fts-backend.onrender.com/admin/testing/deleteUserById?id=${id}`)
+          api.delete(`/admin/testing/deleteUserById?id=${id}`)
           .then((res)=>{
             if (res.data.response.status === "success") {
               toast(res.data.response.message);
@@ -141,8 +140,8 @@ const UserTable = () => {
   }
    
   const getUserById = async(id) => {
-    const res = await axios.get(
-      `https://fts-backend.onrender.com/admin/testing/getUserById?id=${id}`
+    const res = await api.get(
+      `/admin/testing/getUserById?id=${id}`
     );
     setUserData(res.data.response.user);
     if (res.data.response.status === "success") {
@@ -158,7 +157,7 @@ const UserTable = () => {
 
   const newRegistration = async (newUser)=>{
     try{
-      const post = await axios.post('https://fts-backend.onrender.com/user/newRegistration',newUser);
+      const post = await api.post('/user/newRegistration',newUser);
       if(post.data.response.status === "success"){
         toast(post.data.response.message);
         setShow(false)
@@ -171,8 +170,8 @@ const UserTable = () => {
 
   const editUser = async () => {
     try {
-      const put = await axios.put(
-        `https://fts-backend.onrender.com/admin/testing/editUserById?id=${newUser.id}`,newUser
+      const put = await api.put(
+        `/admin/testing/editUserById?id=${newUser.id}`,newUser
       );
       if(put.data.response.status === 'success'){
         toast(put.data.response.message);
@@ -207,7 +206,7 @@ const UserTable = () => {
   
   const fetchData = async (data)=>{
     try {
-      const res = await axios.get(`https://fts-backend.onrender.com/admin/testing/getallusers?page=${data}&size=5&search=${searchValue}`);
+      const res = await api.get(`/admin/testing/getallusers?page=${data}&size=5&search=${searchValue}`);
       setCollectedData(res.data.response.paginationOutput.results)
       setTotalPage(res.data.response.paginationOutput.totalPages)
       setTotalCount(res.data.response.paginationOutput.totalResults)
@@ -226,7 +225,7 @@ const UserTable = () => {
         <div className="d-flex justify-content-between align-items-center my-4 mx-2">
           <h3 className="text-dark">User Table</h3>
           <Button
-            hover
+            
             className="border-0 rounded-2 d-flex align-items-center px-3"
             style={{ background: "#8e75e5" }}
             onClick={handleShow}
@@ -248,8 +247,7 @@ const UserTable = () => {
               </span>
             </div>
             <Button 
-            hover
-            className="border-0 rounded-2 d-flex align-items-center px-2 ms-2"
+           className="border-0 rounded-2 d-flex align-items-center px-2 ms-2"
             style={{ background: "#8e75e5" }}
             onClick={()=>{setSearchValue('');fetchData( )}}>Clear</Button>
           </div>
