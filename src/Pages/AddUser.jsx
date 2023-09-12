@@ -1,5 +1,4 @@
 import React from 'react'
-// import { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
@@ -11,7 +10,7 @@ const AddUser = () => {
     <>
     <div className='d-flex flex-column justify-content-center align-items-center vh-100'>
     <h3 className="mb-3">Add New User</h3> 
-    <Form style={{width:"25rem"}}>
+    <Form className='form-width'>
     <Form.Group className="mb-3" >
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" placeholder="name" className='rounded-1'/>
@@ -29,10 +28,10 @@ const AddUser = () => {
         <Form.Control as="textarea" rows={3} className='rounded-1'/>
       </Form.Group>
       <div className='btn-group d-flex '>
-      <Button variant="primary" type="submit" className='mt-3 me-2 rounded-1 w-100 border-0' onClick={()=>navigate("/dashboard")} style={{background:"#8e75e5"}}>
+      <Button variant="primary" type="submit" className='mt-3 me-2 rounded-1 w-100 border-0 bg-color' onClick={()=>navigate("/dashboard")}>
         submit
       </Button>
-      <Button variant="primary" type="submit" className='mt-3 ms-2 rounded-1 w-100 border-0'  onClick={()=>navigate("/dashboard")} style={{background:"#1C172D"}}>
+      <Button variant="primary" type="submit" className='mt-3 ms-2 rounded-1 w-100 border-0 bg-cancel'  onClick={()=>navigate("/dashboard")}>
         cancel
       </Button>
       </div>

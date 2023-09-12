@@ -5,7 +5,7 @@ import { Image } from '../Assects/Img/Img';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { ThreeDots } from 'react-loader-spinner';
-import api from './Interceptors';
+import api from "../Pages/Interceptors";
 
 const LoginPage = ({setIsAuthenticated}) => {
   const navigate = useNavigate()
@@ -77,24 +77,23 @@ const LoginPage = ({setIsAuthenticated}) => {
   return (
     <>
   <div className='d-flex flex-column justify-content-center align-items-center vh-100'> 
-    <img src={Image.logo} alt="logo" className='img' style={{height:"30%"}} />
+    <img src={Image.logo} alt="logo" className='img img-size'/>
         <Form className='form'>
         <h4>Login</h4>
         <Form.Group className="mb-3">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" className='rounded-1' onChange={(e)=>setEmail(e.target.value)}/> 
-        {validationError.email && (<p style={{ color: "red" }}>{validationError.email}</p>)}
+        {validationError.email && (<p className='error'>{validationError.email}</p>)}
       </Form.Group>
       <Form.Group className="mb-3">
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" className='rounded-1' onChange={(e)=>setPassword(e.target.value)}/>
-        {validationError.password && (<p style={{ color: "red" }}>{validationError.password}</p>)}
+        {validationError.password && (<p className='error'>{validationError.password}</p>)}
       </Form.Group>
         <Link to='#' className='text-decoration-none'><small>Forgot Password?</small></Link>
-        <Button variant='primary' type='submit' className='mt-3 rounded-1 w-100 border-0 py-2' style={{ background: '#8e75e5' }} onClick={login}>
+        <Button variant='primary' type='submit' className='mt-3 rounded-1 w-100 border-0 py-2' onClick={login}>
             {loading ? (
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                {/* <span style={{ marginLeft: '10px' }}>Loading </span> */}
+              <div className="d-flex align-items-center justify-content-center">
                 
                 <ThreeDots height='24' width='40' radius='4' color='#000000' ariaLabel='three-dots-loading' />
                 

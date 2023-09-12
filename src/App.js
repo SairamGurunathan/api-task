@@ -5,9 +5,8 @@ import SideBar from "./Components/SideBar";
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
-import LoginPage from "./Components/LoginPage";
-import ProtectedRoute from "./Components/ProtectedRoute";
-// import { ToastContainer } from "react-toastify";
+import ProtectedRoute from "./Pages/ProtectedRoute";
+import LoginPage from "./Pages/LoginPage";
 
 
 
@@ -27,7 +26,6 @@ function App() {
         </ProtectedRoute>
           }/>
       </Routes>
-      {/* <ToastContainer/> */}
     </div>
   );
 }

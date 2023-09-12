@@ -42,12 +42,7 @@ const Header = () => {
                   <img
                     src={Image.logo}
                     alt="logo"
-                    className="img"
-                    style={{
-                      width: "100%",
-                      height: "150px",
-                      objectFit: "contain",
-                    }}
+                    className="img w-100 img-logo"
                   />
                   <hr className="w-100" />
                   <ul className="nav nav-pills flex-column mb-auto mx-3 flex-inline">
@@ -71,8 +66,7 @@ const Header = () => {
                 <li className="breadcrumb-item">
                   <Link
                     to="/dashboard"
-                    className="text-decoration-none"
-                    style={{ color: "#8e75e5" }}
+                    className="text-decoration-none icon-color"
                   >
                     Dashboard
                   </Link>
@@ -85,12 +79,7 @@ const Header = () => {
             <Nav className="text-end">
               <Dropdown>
                 <Dropdown.Toggle
-                  className="badge d-flex align-items-center p-1 border rounded-pill"
-                  style={{
-                    backgroundColor: "#EEF1FF",
-                    borderColor: "#8e75e5",
-                    color: "#8e75e5",
-                  }}
+                  className="badge d-flex align-items-center p-1 border rounded-pill icon-color border-color"
                 >
                   <img
                     className="rounded-circle me-1"

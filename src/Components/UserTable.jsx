@@ -10,7 +10,8 @@ import TableBase from "./TableBase";
 import Swal from 'sweetalert2';
 import ReactPaginate from "react-paginate";
 import { ToastContainer, toast } from "react-toastify";
-import api from "./Interceptors";
+import api from "../Pages/Interceptors";
+
 
 
 const UserTable = () => {
@@ -226,8 +227,7 @@ const UserTable = () => {
           <h3 className="text-dark">User Table</h3>
           <Button
             
-            className="border-0 rounded-2 d-flex align-items-center px-3"
-            style={{ background: "#8e75e5" }}
+            className="border-0 rounded-2 d-flex align-items-center px-3 bg-color"
             onClick={handleShow}
           >
             <small>Add User</small>
@@ -247,8 +247,7 @@ const UserTable = () => {
               </span>
             </div>
             <Button 
-           className="border-0 rounded-2 d-flex align-items-center px-2 ms-2"
-            style={{ background: "#8e75e5" }}
+           className="border-0 rounded-2 d-flex align-items-center px-2 ms-2 bg-color"
             onClick={()=>{setSearchValue('');fetchData( )}}>Clear</Button>
           </div>
         </div>
@@ -298,19 +297,17 @@ const UserTable = () => {
                   <div className="col-4 gradient-custom text-center text-white d-flex flex-column align-items-center justify-content-center">
                     <img
                       src={Image.cardImages}
-                      className="img-fluid my-4"
-                      style={{ width: "80px" }}
+                      className="img-fluid my-4 img-width"
                       alt="img"
                     />
                     <h5 className="w-100">{userData.name}</h5>
                     <p>Web Designer</p>
                     <Button
                       variant="light"
-                      className="d-flex m-auto"
-                      style={{color:"#8e75e5"}}
+                      className="d-flex m-auto icon-color"
                       onClick={handleClose}
                     >
-                      <RiPictureInPictureExitFill/>
+                      <RiPictureInPictureExitFill className="icon-color"/>
                     </Button>
                   </div>
                   <div className="col-8">

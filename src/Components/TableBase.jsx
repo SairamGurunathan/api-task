@@ -55,13 +55,13 @@ const TableBase = ({collectedData,handleDelete,handleDisplay,handleEdit,itemPerP
                   <td>
                   <div className="d-flex align-items-center justify-content-center">
                       <button className="btn btn-outline fs-5">
-                        <BiMessageSquareEdit style={{ color: "#8e75e5" }} onClick={()=>handleEdit(data.id)}/>
+                        <BiMessageSquareEdit className='icon-color' onClick={()=>handleEdit(data.id)}/>
                       </button>
                       <button className="btn btn-outline fs-5">
-                        <HiOutlineTrash style={{ color: "#8e75e5" }} onClick={()=>handleDelete(data.id)}/>
+                        <HiOutlineTrash className='icon-color' onClick={()=>handleDelete(data.id)}/>
                       </button>
                       <button className="btn btn-outline fs-5">
-                        <PiEyeBold style={{ color: "#8e75e5" }} onClick={()=>handleDisplay(data.id)}/>
+                        <PiEyeBold className='icon-color' onClick={()=>handleDisplay(data.id)}/>
                       </button>
                     </div>
                   </td>

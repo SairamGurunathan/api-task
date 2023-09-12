@@ -23,8 +23,7 @@ const SideBar = () => {
                 <img
                   src={Image.logo}
                   alt="logo"
-                  className="img img-responsive"
-                  style={{ width: "100%",height:"150px",objectFit:"contain" }}
+                  className="img img-responsive w-100 img-logo"
                 />
                 <hr className="w-100"/>
                   <ul className="nav nav-pills flex-column mb-auto mx-3 flex-inline">

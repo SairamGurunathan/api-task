@@ -10,6 +10,7 @@ body{
 }
 .dropdown-menu {
   position: absolute !important;
+  
 }
 .dropdown-menu[data-bs-popper]{
    left: auto !important;
@@ -97,4 +98,33 @@ body.modal-open.off-canvas-start > :not(.modal){
   .form{
     width: 25rem !important;
   }
+}
+.icon-color{
+  color: #8e75e5;
+}
+.bg-color{
+  background-color: #8e75e5;
+}
+.border-color{
+  color: #8e75e5;
+  background-color: #EEF1FF;
+}
+.error{
+  color: red;
+}
+.img-size{
+  height: 30%;
+}
+.img-width{
+  width: 80px;
+}
+.img-logo{
+  object-fit: contain;
+  height: 150px;
+}
+.bg-cancel{
+  background-color: #1C172D;
+}
+.form-width{
+  width: 25rem;
 }
