@@ -1,12 +1,12 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.js";
-import "./App.css";
-import SideBar from "./Components/SideBar";
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
 import "react-toastify/dist/ReactToastify.css";
-import ProtectedRoute from "./Pages/ProtectedRoute";
-import LoginPage from "./Pages/LoginPage";
+import "./App.css";
+import ProtectedRoute from "./Utilities/ProtectedRoute";
+import LoginPage from "./Authentication/LoginPage";
+import SideBar from "./Components/SideBar";
 
 
 
@@ -22,7 +22,7 @@ function App() {
 
         <Route path="/dashboard" element={
         <ProtectedRoute isAuthenticated={isAuthenticated}>
-          <SideBar  />
+          <SideBar/>
         </ProtectedRoute>
           }/>
       </Routes>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+
 const api = axios.create({
   baseURL: "https://fts-backend.onrender.com",
 });

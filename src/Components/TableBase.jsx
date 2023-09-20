@@ -1,10 +1,10 @@
 import React from 'react';
+import moment from 'moment';
+import { Table } from 'react-bootstrap';
 import { LiaSortSolid } from "react-icons/lia";
 import { PiEyeBold } from "react-icons/pi";
 import { HiOutlineTrash } from "react-icons/hi";
-import { Table } from 'react-bootstrap';
 import { BiMessageSquareEdit } from 'react-icons/bi';
-import moment from 'moment';
 
 
 const TableBase = ({collectedData,handleDelete,handleDisplay,handleEdit,itemPerPage,pageNumber}) => {

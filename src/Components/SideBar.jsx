@@ -1,9 +1,9 @@
 import React from "react";
-import { FaTachometerAlt } from "react-icons/fa";
-import Header from "./Header";
-import { Image } from "../Assects/Img/Img";
-import UserTable from "./UserTable";
 import { Link } from "react-router-dom";
+import { FaTachometerAlt } from "react-icons/fa";
+import { Image } from "../Assects/Img/Img";
+import Header from "./Header";
+import UserTable from "./UserTable";
 
 
 const SideBar = () => {
@@ -39,7 +39,7 @@ const SideBar = () => {
           </div>
           <div className="col-sm-12 col-md-12 col-lg-10  p-0">
             <div>
-              <Header/>
+              <Header />
               <UserTable />
             </div>
           </div>
